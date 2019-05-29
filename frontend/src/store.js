@@ -6,11 +6,13 @@ import rootReducer from "./reducers";
 
 const inititalState = {};
 
+const middleware = [thunk];
+
 const store = createStore(
   rootReducer,
   inititalState,
   compose(
-    applyMiddleware(thunk),
+    applyMiddleware(...middleware),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );

@@ -6,7 +6,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authentication";
 
-import Navbar from "./components/Navbar";
+import MyNavbar from "./components/MyNavbar/MyNavbar";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Home from "./components/Home";
@@ -31,7 +31,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div>
-            <Navbar />
+            <MyNavbar />
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />

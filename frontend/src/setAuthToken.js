@@ -1,4 +1,5 @@
 // setAuthToken.js
+// Similar to fetch API, axios can automatic transforms for JSON data
 
 import axios from "axios";
 

@@ -8,22 +8,14 @@ import { withRouter } from "react-router-dom";
 
 class Home extends Component {
   render() {
-    const { isAuthenticated, user } = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
 
     return <div>{isAuthenticated ? "authComponent" : "guestComponent"}</div>;
   }
 }
 
-// Home.propTypes = {
-//   logoutUser: PropTypes.func.isRequired,
-//   auth: PropTypes.object.isRequired
-// };
-
 const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  {}
-)(withRouter(Home));
+export default connect(mapStateToProps)(withRouter(Home));
