@@ -9,9 +9,11 @@ import { setCurrentUser, logoutUser } from "./actions/authentication";
 import MyNavbar from "./components/MyNavbar/MyNavbar";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
+import Game from "./components/Game/Game";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
 
 if (localStorage.jwtToken) {
   setAuthToken(localStorage.jwtToken);
@@ -30,14 +32,13 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div>
-            <MyNavbar />
-            <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/" component={Home} />
-            </div>
-          </div>
+          <MyNavbar />
+          <Container>
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/game" component={Game} />
+          </Container>
         </Router>
       </Provider>
     );

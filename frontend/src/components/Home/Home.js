@@ -1,16 +1,20 @@
-// Home.js
-
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser } from "../actions/authentication";
 import { withRouter } from "react-router-dom";
+
+import { Container } from "react-bootstrap";
 
 class Home extends Component {
   render() {
     const { isAuthenticated } = this.props.auth;
 
-    return <div>{isAuthenticated ? "authComponent" : "guestComponent"}</div>;
+    return (
+      <Container>
+        {isAuthenticated
+          ? "Home page: authComponent"
+          : "Home page: guestComponent"}
+      </Container>
+    );
   }
 }
 
